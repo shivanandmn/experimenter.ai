@@ -4,32 +4,74 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>COREQUIZ - Coming Soon</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Poppins:wght@300;600&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: 'Roboto', sans-serif;
-            background-color: #f0f4f8;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #6e8efb, #a777e3);
             color: #333;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
             margin: 0;
+            overflow: hidden;
         }
         .container {
             text-align: center;
-            padding: 20px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
+            padding: 40px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            border-radius: 12px;
             background-color: #fff;
+            max-width: 600px;
+            animation: fadeIn 2s ease-in-out;
         }
         h1 {
-            font-size: 2.5rem;
-            color: #007bff;
+            font-size: 3rem;
+            color: #6e8efb;
         }
         p {
-            font-size: 1.2rem;
-            color: #666;
+            font-size: 1.1rem;
+            color: #444;
+        }
+        h2 {
+            font-size: 2rem;
+            color: #a777e3;
+            margin-top: 20px;
+        }
+        .countdown {
+            font-size: 1.5rem;
+            color: #333;
+            margin-top: 30px;
+        }
+        .subscribe {
+            margin-top: 30px;
+        }
+        input[type="email"] {
+            padding: 10px;
+            font-size: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            width: 70%;
+            max-width: 300px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 1rem;
+            background-color: #6e8efb;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-left: 10px;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #5a73d8;
+        }
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
         }
     </style>
 </head>
@@ -39,6 +81,34 @@
         <p>Bridging the gap between education and industry with AI-powered upskilling</p>
         <h2>Coming Soon!</h2>
         <p>We're working hard to bring you a personalized learning experience. Stay tuned!</p>
-    </div>
+        <div class="countdown">Launching in: <span id="countdown-timer">30 days</span></div>
+        <div class="subscribe">
+            <p>Subscribe to get notified:</p>
+            <input type="email" id="email" placeholder="Enter your email">
+            <button onclick="subscribe()">Notify Me</button>
+        </div>
+        <div class="contact">
+            <p>Contact us at: <a href="mailto:corequizai@gmail.com">corequizai@gmail.com</a></p>
+        </div>
+    <script>
+        function subscribe() {
+            const email = document.getElementById('email').value;
+            if (email) {
+                alert(`Thank you for subscribing! We'll keep you updated at ${email}`);
+            } else {
+                alert('Please enter a valid email address.');
+            }
+        }
+
+        // Countdown timer (example for 30 days)
+        const countdownElement = document.getElementById('countdown-timer');
+        let daysLeft = 30;
+        setInterval(() => {
+            if (daysLeft > 0) {
+                daysLeft--;
+                countdownElement.textContent = `${daysLeft} days`;
+            }
+        }, 86400000); // Updates every day (86400000 ms)
+    </script>
 </body>
 </html>
