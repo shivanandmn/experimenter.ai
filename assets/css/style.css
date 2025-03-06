@@ -24,6 +24,8 @@ body {
     color: var(--light-text);
     line-height: 1.6;
     overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 a {
@@ -156,12 +158,486 @@ a:hover {
     color: var(--secondary-color);
 }
 
-/* Hero Section */
-.hero-section {
+/* Common Section Styles */
+.hero-section,
+.why-hero-section,
+.solutions-hero-section,
+.industries-hero-section,
+.company-hero-section,
+.resources-hero-section,
+.blog-hero-section,
+.careers-hero-section {
     padding: 6rem 0;
     background: var(--dark-bg);
     position: relative;
     overflow: hidden;
+}
+
+/* Section-specific backgrounds */
+.why-hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    background: radial-gradient(circle at 70% 30%, rgba(0, 199, 255, 0.15), transparent 70%);
+    z-index: 0;
+}
+
+.solutions-hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background: radial-gradient(circle at 30% 70%, rgba(0, 102, 255, 0.15), transparent 70%);
+    z-index: 0;
+}
+
+.industries-hero-section::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    height: 80%;
+    background: radial-gradient(circle, rgba(0, 199, 255, 0.1), transparent 70%);
+    z-index: 0;
+}
+
+/* Careers Styles */
+.career-tag {
+    display: inline-block;
+    background: rgba(0, 102, 255, 0.1);
+    color: var(--secondary-color);
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+.benefit-card {
+    background: var(--card-bg);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 2rem;
+    text-align: center;
+    height: 100%;
+    transition: all 0.3s ease;
+}
+
+.benefit-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary-color);
+}
+
+.benefit-card i {
+    font-size: 2.5rem;
+    color: var(--secondary-color);
+    margin-bottom: 1.5rem;
+}
+
+.culture-values {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.value-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+}
+
+.value-item i {
+    font-size: 1.5rem;
+    color: var(--secondary-color);
+}
+
+.benefit-item {
+    text-align: center;
+    padding: 1.5rem;
+    background: var(--card-bg);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    height: 100%;
+    transition: all 0.3s ease;
+}
+
+.benefit-item:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary-color);
+}
+
+.benefit-item i {
+    font-size: 2rem;
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+}
+
+.position-card {
+    background: var(--card-bg);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    overflow: hidden;
+    height: 100%;
+    transition: all 0.3s ease;
+}
+
+.position-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary-color);
+}
+
+.position-content {
+    padding: 2rem;
+}
+
+.position-tag {
+    display: inline-block;
+    background: rgba(0, 102, 255, 0.1);
+    color: var(--secondary-color);
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.position-requirements {
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0;
+}
+
+.position-requirements li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.position-requirements li:before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: var(--secondary-color);
+}
+
+.position-meta {
+    display: flex;
+    gap: 1.5rem;
+    color: var(--gray-text);
+    font-size: 0.9rem;
+}
+
+.position-meta i {
+    margin-right: 0.5rem;
+}
+
+.position-filters {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.process-timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.process-step {
+    display: flex;
+    gap: 2rem;
+    position: relative;
+}
+
+.step-number {
+    width: 40px;
+    height: 40px;
+    background: var(--primary-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    flex-shrink: 0;
+}
+
+.step-content {
+    flex: 1;
+}
+
+/* Blog Styles */
+.blog-tag {
+    display: inline-block;
+    background: rgba(0, 102, 255, 0.1);
+    color: var(--secondary-color);
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+.featured-post-card {
+    background: var(--card-bg);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.featured-post-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary-color);
+}
+
+.featured-post-card .post-image {
+    height: 300px;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.featured-post-card .post-content {
+    padding: 2rem;
+}
+
+.post-meta {
+    display: flex;
+    gap: 1.5rem;
+    color: var(--gray-text);
+    font-size: 0.9rem;
+    margin-top: 1rem;
+}
+
+.post-meta i {
+    margin-right: 0.5rem;
+}
+
+.trending-posts {
+    background: var(--card-bg);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 2rem;
+}
+
+.trending-post {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.trending-post:last-child {
+    border-bottom: none;
+}
+
+.trending-post .number {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--secondary-color);
+    opacity: 0.5;
+}
+
+.trending-post h4 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+.category-card {
+    background: var(--card-bg);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 2rem;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.category-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary-color);
+}
+
+.category-card i {
+    font-size: 2rem;
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+}
+
+.category-card .post-count {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    margin-top: 1rem;
+}
+
+.read-more {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    color: var(--secondary-color);
+    font-weight: 500;
+}
+
+.read-more i {
+    transition: transform 0.3s ease;
+}
+
+.read-more:hover i {
+    transform: translateX(5px);
+}
+
+/* Card Styles */
+.case-study-card,
+.white-paper-card,
+.blog-card,
+.team-card,
+.solution-card {
+    background: var(--card-bg);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 2rem;
+    transition: all 0.3s ease;
+    height: 100%;
+}
+
+.case-study-card:hover,
+.white-paper-card:hover,
+.blog-card:hover,
+.team-card:hover,
+.solution-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary-color);
+    box-shadow: 0 8px 24px rgba(0, 102, 255, 0.2);
+}
+
+/* Timeline Styles */
+.timeline {
+    position: relative;
+    padding: 2rem 0;
+}
+
+.timeline-item {
+    position: relative;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    background: var(--card-bg);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    width: 2px;
+    height: 100%;
+    background: var(--primary-color);
+    left: -1px;
+    top: 0;
+}
+
+/* Stats and Metrics */
+.stat-card {
+    background: var(--card-bg);
+    border-radius: 12px;
+    padding: 2rem;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.stat-card h3 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(to right, var(--light-text), var(--secondary-color));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Form Styles */
+.contact-form input,
+.contact-form textarea,
+.newsletter-form input {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--light-text);
+    padding: 0.8rem 1rem;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus,
+.newsletter-form input:focus {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: var(--primary-color);
+    box-shadow: none;
+    color: var(--light-text);
+}
+
+/* Resource Cards */
+.resource-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.resource-card {
+    background: var(--card-bg);
+    border-radius: 12px;
+    padding: 2rem;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.resource-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary-color);
+}
+
+.resource-card i {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: var(--secondary-color);
+}
+
+/* Industry Grid */
+.industries-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    padding: 2rem;
+}
+
+.industry-icon {
+    background: var(--card-bg);
+    border-radius: 12px;
+    padding: 2rem;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.industry-icon:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary-color);
+}
+
+.industry-icon i {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: var(--secondary-color);
 }
 
 .hero-section::before {
@@ -459,10 +935,235 @@ a:hover {
 }
 
 /* Mobile (< 767.98px) */
+/* Responsive Design */
+/* Desktop (>992px) */
+@media (min-width: 992px) {
+    .container {
+        max-width: 1200px;
+    }
+    
+    .hero-section {
+        min-height: 80vh;
+    }
+
+    .platform-visual {
+        transform: scale(1.1);
+    }
+}
+
+/* Tablet (768px - 991.98px) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .hero-section {
+        padding: 4rem 0;
+    }
+
+    .platform-visual {
+        transform: scale(0.9);
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .case-study-card,
+    .solution-card,
+    .industry-card {
+        margin-bottom: 2rem;
+    }
+}
+
+/* Mobile (<767.98px) */
 @media (max-width: 767.98px) {
+    .benefit-card,
+    .benefit-item {
+        padding: 1.5rem;
+    }
+
+    .benefit-card i,
+    .benefit-item i {
+        font-size: 2rem;
+    }
+
+    .value-item {
+        gap: 1rem;
+    }
+
+    .position-content {
+        padding: 1.5rem;
+    }
+
+    .position-filters {
+        gap: 0.5rem;
+    }
+
+    .process-step {
+        gap: 1rem;
+    }
+
+    .step-number {
+        width: 32px;
+        height: 32px;
+        font-size: 0.9rem;
+    }
+    .featured-post-card .post-image {
+        height: 200px;
+    }
+
+    .featured-post-card .post-content {
+        padding: 1.5rem;
+    }
+
+    .trending-posts {
+        margin-top: 2rem;
+    }
+
+    .post-meta {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .category-card {
+        padding: 1.5rem;
+    }
+    .hero-section {
+        padding: 3rem 0;
+    }
+
+    .hero-section h1 {
+        font-size: 2rem;
+    }
+
+    .platform-visual {
+        transform: scale(0.8);
+        margin-top: 2rem;
+    }
+
+    .section-title {
+        font-size: 1.8rem;
+    }
+
     .solution-showcase-card {
         padding: 1.5rem;
     }
+
+    .navbar-collapse {
+        background: var(--darker-bg);
+        padding: 1rem;
+        border-radius: 8px;
+        margin-top: 1rem;
+    }
+
+    .top-banner {
+        font-size: 0.8rem;
+    }
+
+    .btn {
+        width: 100%;
+        margin-bottom: 0.5rem;
+    }
+}
+
+/* Small Mobile (<575.98px) */
+@media (max-width: 575.98px) {
+    .benefit-card,
+    .benefit-item {
+        padding: 1rem;
+    }
+
+    .benefit-card i,
+    .benefit-item i {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .value-item {
+        flex-direction: column;
+        gap: 0.5rem;
+        text-align: center;
+    }
+
+    .position-content {
+        padding: 1rem;
+    }
+
+    .position-meta {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .process-step {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.5rem;
+    }
+
+    .step-number {
+        margin: 0 auto;
+    }
+
+    .career-tag {
+        font-size: 0.8rem;
+        padding: 0.3rem 0.8rem;
+    }
+    .featured-post-card .post-image {
+        height: 150px;
+    }
+
+    .featured-post-card .post-content {
+        padding: 1rem;
+    }
+
+    .featured-post-card h2 {
+        font-size: 1.5rem;
+    }
+
+    .trending-post .number {
+        font-size: 1.2rem;
+    }
+
+    .trending-post h4 {
+        font-size: 1rem;
+    }
+
+    .category-card {
+        padding: 1rem;
+    }
+
+    .category-card i {
+        font-size: 1.5rem;
+    }
+
+    .blog-tag {
+        font-size: 0.8rem;
+        padding: 0.3rem 0.8rem;
+    }
+    .hero-section h1 {
+        font-size: 1.8rem;
+    }
+
+    .feature-highlight {
+        font-size: 1rem;
+        padding: 0.4rem 0.8rem;
+    }
+
+    .platform-visual {
+        transform: scale(0.7);
+    }
+
+    .section-title {
+        font-size: 1.6rem;
+    }
+
+    .top-banner .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .top-banner .d-flex {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+}
     
     .solution-showcase-card .solution-icon {
         width: 50px;
