@@ -1,119 +1,359 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="icon" href="https://raw.githubusercontent.com/shivanandmn/experimenter.ai/refs/heads/main/favicon.ico" type="image/x-icon">
-    <link rel="shortcut icon" href="https://raw.githubusercontent.com/shivanandmn/experimenter.ai/refs/heads/main/favicon.ico">
-    <meta property="og:image" content="experimenterai.png">
-    <link rel="stylesheet" href="styles.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>COREQUIZ - Coming Soon</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Poppins:wght@300;600&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Poppins', sans-serif;
-            background: linear-gradient(135deg, #6e8efb, #a777e3);
-            color: #333;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            overflow: hidden;
-        }
-        .container {
-            text-align: center;
-            padding: 40px;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-            border-radius: 12px;
-            background-color: #fff;
-            max-width: 600px;
-            animation: fadeIn 2s ease-in-out;
-        }
-        h1 {
-            font-size: 3rem;
-            color: #6e8efb;
-        }
-        p {
-            font-size: 1.1rem;
-            color: #444;
-        }
-        h2 {
-            font-size: 2rem;
-            color: #a777e3;
-            margin-top: 20px;
-        }
-        .countdown {
-            font-size: 1.5rem;
-            color: #333;
-            margin-top: 30px;
-        }
-        .subscribe {
-            margin-top: 30px;
-        }
-        input[type="email"] {
-            padding: 10px;
-            font-size: 1rem;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            width: 70%;
-            max-width: 300px;
-        }
-        button {
-            padding: 10px 20px;
-            font-size: 1rem;
-            background-color: #6e8efb;
-            color: #fff;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            margin-left: 10px;
-            transition: background-color 0.3s;
-        }
-        button:hover {
-            background-color: #5a73d8;
-        }
-        @keyframes fadeIn {
-            0% { opacity: 0; transform: translateY(20px); }
-            100% { opacity: 1; transform: translateY(0); }
-        }
-    </style>
+    <title>Experimenter.ai - Your AI Project Development Partner</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-    <div class="container">
-        <h1>COREQUIZ</h1>
-        <img src="experimenterai.png" alt="COREQUIZ logo" style="width: 150px; margin-top: 20px;">
-        <p>Bridging the gap between education and industry with AI-powered upskilling</p>
-        <h2>Coming Soon!</h2>
-        <p>We're working hard to bring you a personalized learning experience. Stay tuned!</p>
-        <div class="countdown">Launching in: <span id="countdown-timer">30 days</span></div>
-        <div class="subscribe">
-            <p>Subscribe to get notified:</p>
-            <input type="email" id="email" placeholder="Enter your email">
-            <button onclick="subscribe()">Notify Me</button>
+    <!-- Top Banner -->
+    <div class="top-banner">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center">
+                <div>
+                    <span>Free AI Project Consultation: </span>
+                    <span>Transform Your Business with Custom AI Solutions</span>
+                    <a href="#" class="ms-2 watch-now">Schedule Now</a>
+                </div>
+                <div>
+                    <a href="#" class="me-3"><i class="fas fa-phone"></i> Schedule a Call</a>
+                    <a href="#"><i class="fab fa-linkedin"></i> Connect on LinkedIn</a>
+                </div>
+            </div>
         </div>
-        <div class="contact">
-            <p>Contact us at: <a href="mailto:corequizai@gmail.com">corequizai@gmail.com</a></p>
-        </div>
-    <script>
-        function subscribe() {
-            const email = document.getElementById('email').value;
-            if (email) {
-                alert(`Thank you for subscribing! We'll keep you updated at ${email}`);
-            } else {
-                alert('Please enter a valid email address.');
-            }
-        }
+    </div>
 
-        // Countdown timer (example for 30 days)
-        const countdownElement = document.getElementById('countdown-timer');
-        let daysLeft = 30;
-        setInterval(() => {
-            if (daysLeft > 0) {
-                daysLeft--;
-                countdownElement.textContent = `${daysLeft} days`;
-            }
-        }, 86400000); // Updates every day (86400000 ms)
-    </script>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <span class="logo-text">experimenter.ai</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Why</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="solutionsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Solutions
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="solutionsDropdown">
+                            <li><a class="dropdown-item" href="#">LLM Solutions</a></li>
+                            <li><a class="dropdown-item" href="#">RAG Systems</a></li>
+                            <li><a class="dropdown-item" href="#">Content Moderation</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">Custom Solutions</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="industriesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Industries
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="industriesDropdown">
+                            <li><a class="dropdown-item" href="#">Healthcare</a></li>
+                            <li><a class="dropdown-item" href="#">Finance</a></li>
+                            <li><a class="dropdown-item" href="#">Retail</a></li>
+                            <li><a class="dropdown-item" href="#">Manufacturing</a></li>
+                            <li><a class="dropdown-item" href="#">Education</a></li>
+                            <li><a class="dropdown-item" href="#">Legal</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="companyDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Company
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="companyDropdown">
+                            <li><a class="dropdown-item" href="#">About Us</a></li>
+                            <li><a class="dropdown-item" href="#">Team</a></li>
+                            <li><a class="dropdown-item" href="#">Careers</a></li>
+                            <li><a class="dropdown-item" href="#">Blog</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="resourcesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Resources
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="resourcesDropdown">
+                            <li><a class="dropdown-item" href="#">Case Studies</a></li>
+                            <li><a class="dropdown-item" href="#">White Papers</a></li>
+                            <li><a class="dropdown-item" href="#">Blog</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <div class="d-flex align-items-center">
+                    <a href="#" class="btn btn-primary">Schedule a Call</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6" data-aos="fade-right" data-aos-duration="1000">
+                    <h1 class="display-4 fw-bold mb-4">Your AI Project Development Partner</h1>
+                    <div class="feature-highlight mb-4">
+                        <span>Expert AI Solutions & Consulting</span>
+                    </div>
+                    <p class="lead mb-4">Transform your business with custom AI solutions. Our expert team delivers end-to-end AI development, from concept to deployment.</p>
+                    <div class="d-flex flex-wrap">
+                        <a href="#" class="btn btn-primary me-3 mb-3">Schedule a Call</a>
+                        <a href="#" class="btn btn-outline-light mb-3">Our methodology <i class="fas fa-arrow-right ms-2"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-6" data-aos="fade-left" data-aos-duration="1000">
+                    <div class="platform-visual">
+                        <div class="platform-card">
+                            <div class="platform-logo">
+                                <span class="logo-text">AI Project Solutions</span>                    </div>
+                            <div class="platform-features">
+                                <div class="feature">LLM Oversight</div>
+                                <div class="feature">LLM Training & Deployment</div>
+                                <div class="feature">RAG Data Pipeline</div>
+                                <div class="feature">Inference & Deployment Orchestration</div>
+                            </div>
+                        </div>
+                        <div class="platform-badge">
+                            <div class="badge-content">
+                                <span>Inference & Deployment Orchestration</span>
+                                <span class="badge-tag">NEW</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section py-5">
+        <div class="container">
+            <div class="row align-items-center" data-aos="fade-up">
+                <div class="col-lg-8">
+                    <h2 class="mb-3">Ready to Start Your AI Project?</h2>
+                    <p class="lead mb-0">Let's discuss your AI needs and create a custom solution for your business.</p>
+                </div>
+                <div class="col-lg-4 text-lg-end">
+                    <a href="#" class="btn btn-primary">Schedule a Call</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- General Solutions Section -->
+    <section class="general-solutions-section py-5">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <h2 class="section-title">AI Solutions Portfolio</h2>
+                <p class="section-subtitle">Proven AI solutions that drive business transformation</p>
+            </div>
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+                <div class="col" data-aos="fade-up" data-aos-delay="100">
+                    <div class="solution-showcase-card h-100">
+                        <div class="solution-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <h3>LLM Solutions</h3>
+                        <ul class="solution-features">
+                            <li>Custom LLM development</li>
+                            <li>Model fine-tuning</li>
+                            <li>Prompt engineering</li>
+                            <li>Enterprise LLM deployment</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col" data-aos="fade-up" data-aos-delay="200">
+                    <div class="solution-showcase-card h-100">
+                        <div class="solution-icon">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <h3>RAG Systems</h3>
+                        <ul class="solution-features">
+                            <li>Knowledge base integration</li>
+                            <li>Vector search optimization</li>
+                            <li>Context-aware responses</li>
+                            <li>Real-time data retrieval</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col" data-aos="fade-up" data-aos-delay="300">
+                    <div class="solution-showcase-card h-100">
+                        <div class="solution-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3>Content Moderation</h3>
+                        <ul class="solution-features">
+                            <li>AI-powered content filtering</li>
+                            <li>Real-time moderation</li>
+                            <li>Multi-modal analysis</li>
+                            <li>Custom policy enforcement</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Industries Section -->
+    <section class="industries-section py-5">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <h2 class="section-title">Industry Expertise</h2>
+                <p class="section-subtitle">Delivering custom AI solutions across sectors</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="industry-card">
+                        <div class="industry-icon">
+                            <i class="fas fa-hospital"></i>
+                        </div>
+                        <h3>Healthcare</h3>
+                        <p>Transforming patient care and medical research with AI.</p>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="industry-card">
+                        <div class="industry-icon">
+                            <i class="fas fa-landmark"></i>
+                        </div>
+                        <h3>Finance</h3>
+                        <p>Revolutionizing financial services with intelligent automation.</p>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="industry-card">
+                        <div class="industry-icon">
+                            <i class="fas fa-shopping-cart"></i>
+                        </div>
+                        <h3>Retail</h3>
+                        <p>Enhancing customer experiences and optimizing operations.</p>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="400">
+                    <div class="industry-card">
+                        <div class="industry-icon">
+                            <i class="fas fa-industry"></i>
+                        </div>
+                        <h3>Manufacturing</h3>
+                        <p>Improving efficiency and quality with AI-driven insights.</p>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="500">
+                    <div class="industry-card">
+                        <div class="industry-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <h3>Education</h3>
+                        <p>Personalizing learning experiences and automating administrative tasks.</p>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="600">
+                    <div class="industry-card">
+                        <div class="industry-icon">
+                            <i class="fas fa-gavel"></i>
+                        </div>
+                        <h3>Legal</h3>
+                        <p>Streamlining legal processes and enhancing document analysis.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8" data-aos="fade-right">
+                    <h2 class="mb-3">Ready to Discuss Your AI Project?</h2>
+                    <p class="lead mb-4">Let's explore how our custom AI solutions can drive your business forward.</p>
+                </div>
+                <div class="col-lg-4 text-lg-end" data-aos="fade-left">
+                    <a href="#" class="btn btn-primary btn-lg">Schedule a Call</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <a href="index.html" class="footer-brand">
+                        <span class="logo-text">experimenter.ai</span>
+                    </a>
+                    <p class="mt-3">Your trusted partner for custom AI development. We specialize in creating tailored AI solutions that drive business growth and innovation.</p>
+                    <div class="social-links mt-3">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fab fa-discord"></i></a>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3 col-lg-2 mb-4 mb-md-0">
+                    <h5>Services</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#">AI Consulting</a></li>
+                        <li><a href="#">Custom Solutions</a></li>
+                        <li><a href="#">Project Assessment</a></li>
+                        <li><a href="#">Case Studies</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-md-3 col-lg-2 mb-4 mb-md-0">
+                    <h5>Solutions</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#">AI Agents</a></li>
+                        <li><a href="#">LLM Solutions</a></li>
+                        <li><a href="#">RAG Systems</a></li>
+                        <li><a href="#">Content Moderation</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-md-3 col-lg-2 mb-4 mb-md-0">
+                    <h5>Company</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Team</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-md-3 col-lg-2 mb-4 mb-md-0">
+                    <h5>Developers</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Documentation</a></li>
+                        <li><a href="#">API Reference</a></li>
+                        <li><a href="#">SDK</a></li>
+                        <li><a href="#">Community</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="mt-4 mb-3">
+            <div class="row align-items-center">
+                <div class="col-md-6 mb-3 mb-md-0">
+                    <p class="mb-0">&copy; 2025 Experimenter.ai. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <a href="#" class="me-3">Privacy Policy</a>
+                    <a href="#" class="me-3">Terms of Service</a>
+                    <a href="#">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="assets/js/main.js"></script>
 </body>
 </html>
